@@ -10,7 +10,7 @@ quantum-notebooks/
 ├── Project.toml / Manifest.toml                  # Julia env
 ├── notebooks/
 │   ├── python/        # Qiskit, QuTiP, NumPy
-│   └── julia/         # Yao.jl, QuantumOptics.jl
+│   └── julia/         # Pluto notebooks (.jl): Yao.jl, QuantumOptics.jl
 └── data/              # local data, git-ignored
 ```
 
@@ -34,10 +34,17 @@ folder and finds the root `Project.toml`.
 ## Run
 
 ```sh
+# Python notebooks
 uv run jupyter lab
+
+# Julia (Pluto) notebooks
+julia --project=. -e 'using Pluto; Pluto.run()'
 ```
 
-Pick the **Python 3** kernel for `notebooks/python/` and **Julia quantum-notebooks** for `notebooks/julia/`.
+Pluto notebooks are plain `.jl` files. Each one activates the repo-root
+`Project.toml` in its first code cell (`Pkg.activate(Base.current_project(@__DIR__))`),
+so they share the project's packages instead of Pluto's per-notebook package manager.
+The IJulia kernel is still available if you want a Julia notebook in Jupyter.
 
 ## Adding packages
 
