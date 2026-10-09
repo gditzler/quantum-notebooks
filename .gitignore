@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.ruff_cache/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Julia
+# Manifest.toml is committed so environments are reproducible.
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+
+# Data / outputs
+data/*
+!data/.gitkeep
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
+# roborev snapshots
+/.roborev/

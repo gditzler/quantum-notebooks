@@ -1,0 +1,31 @@
+[project]
+name = "quantum-notebooks"
+version = "0.1.0"
+description = "Notebooks for learning quantum computing and quantum information science."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "qiskit",
+    "qiskit-aer",
+    "qutip",
+]
+
+[dependency-groups]
+dev = [
+    "jupyterlab",
+    "ipykernel",
+    "ipywidgets",
+    "ruff",
+    "nbstripout",
+]
+
+[tool.uv]
+# Notebooks only; this is not an installable package.
+package = false
+
+[tool.ruff]
+line-length = 100
+extend-include = ["*.ipynb"]
